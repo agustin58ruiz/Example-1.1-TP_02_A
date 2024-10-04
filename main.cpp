@@ -3,6 +3,7 @@
 
 int main()
 {
+
     //Constructor
     DigitalIn gasDetector(D2);
     //Constructor
@@ -11,10 +12,12 @@ int main()
     //Metodo
     gasDetector.mode(PullDown);
 
-
+    gpio_mode();
+    
     alarmLed = OFF;
 
     while (true) {
+
         if ( gasDetector == ON ) {
             printf("%s\n", "El detector de gas esta encendido.");
             alarmLed = ON;
@@ -24,5 +27,6 @@ int main()
             printf("%s\n", "El detector de gas esta apagado.");
             alarmLed = OFF;
         }
+
     }
 }
